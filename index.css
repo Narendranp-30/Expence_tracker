@@ -1,0 +1,50 @@
+
+    body {
+      background: #f5f6fa;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+    }
+
+.container-box {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  padding: 40px;
+}
+
+.nav-tabs .nav-link {
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.page h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.balance h2 {
+  font-size: 2.5rem;
+}
+
+.list-group-item {
+  font-size: 1.1rem;
+}
+
+.btn {
+  font-size: 1.1rem;
+}
+
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
