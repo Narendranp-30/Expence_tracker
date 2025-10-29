@@ -14,6 +14,16 @@
       form.reset();
     });
 
+    const clearTasksBtn = document.getElementById('clearTasks');
+    if (clearTasksBtn) {
+      clearTasksBtn.addEventListener('click', () => {
+        if (!confirm('Clear all tasks? This cannot be undone.')) return;
+        tasks = [];
+        localStorage.removeItem('tasks');
+        renderTasks();
+      });
+    }
+
     function renderTasks() {
       todoList.innerHTML = '';
       tasks.forEach(t => {

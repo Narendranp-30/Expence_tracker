@@ -60,6 +60,16 @@
 
     filterType.addEventListener('change', renderTransactions);
 
+    const clearBtn = document.getElementById('clearTransactions');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (!confirm('Clear all transactions? This cannot be undone.')) return;
+        transactions = [];
+        localStorage.removeItem('transactions');
+        saveAndRender();
+      });
+    }
+
 
     function saveAndRender() {
       localStorage.setItem('transactions', JSON.stringify(transactions));
