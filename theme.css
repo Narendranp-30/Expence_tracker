@@ -1,0 +1,17 @@
+:root {
+  --accent: #0d9488;
+  --accent-soft: #e8f6f3;
+  --accent-contrast: #ffffff;
+}
+
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent-contrast) !important;
+}
+.text-primary { color: var(--accent) !important; }
+.nav-tabs .nav-link.active { background-color: var(--accent) !important; color: var(--accent-contrast) !important; }
+.btn-primary:hover, .bg-primary:hover { filter: brightness(0.95); }

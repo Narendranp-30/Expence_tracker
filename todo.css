@@ -5,7 +5,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* Use same container style as Expense Tracker */
 .container {
   max-width: 900px;
   margin: 50px auto;
@@ -15,7 +14,6 @@ body {
   padding: 40px;
 }
 
-/* Nav tabs styling */
 .nav-tabs .nav-link {
   color: #333;
   font-weight: 600;
@@ -23,18 +21,16 @@ body {
 }
 
 .nav-tabs .nav-link.active {
-  background-color: #0d6efd;
+  background-color: var(--accent);
   color: #fff;
 }
 
-/* Page title */
 h3 {
   font-size: 1.6rem;
   font-weight: 700;
   text-align: center;
 }
 
-/* To-Do List items */
 .list-group-item {
   font-size: 1.1rem;
   display: flex;
@@ -42,12 +38,10 @@ h3 {
   align-items: center;
 }
 
-/* Buttons */
 .btn {
   font-size: 1.1rem;
 }
 
-/* Page hidden/display logic (optional if using tabs) */
 .page {
   display: none;
 }
@@ -55,11 +49,11 @@ h3 {
   display: block;
 }
 
-      .task-completed {
-        text-decoration: line-through;
-        opacity: 0.6;
-      }
-      .task-controls button {
-        margin-left: 6px;
-      }
+.task-completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.task-controls button {
+  margin-left: 6px;
+}
     
