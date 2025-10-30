@@ -78,7 +78,7 @@
     }
 
    function renderTransactions() {
-  transactionList.innerHTML = ' ';
+    transactionList.innerHTML = '';
   const transactionTable = document.querySelector('#transactionTable tbody');
   transactionTable.innerHTML = '';
 
@@ -142,5 +142,53 @@
       }
     }
 
-    renderTransactions();
+  
+  const transactionTableBody = document.querySelector('#transactionTable tbody');
+  if (transactionTableBody) {
+    transactionTableBody.addEventListener('click', (e) => {
+      const deleteBtn = e.target.closest('.delete-btn');
+      if (deleteBtn) {
+        const id = parseInt(deleteBtn.dataset.id, 10);
+        if (confirm('Delete this transaction?')) {
+          transactions = transactions.filter(t => t.id !== id);
+          saveAndRender();
+        }
+        return;
+      }
+
+      const updateBtn = e.target.closest('.update-btn');
+      if (updateBtn) {
+        const id = parseInt(updateBtn.dataset.id, 10);
+        const t = transactions.find(x => x.id === id);
+        if (!t) return;
+
+        
+        const newDesc = prompt('Edit description', t.desc);
+        if (newDesc === null) return; // cancelled
+
+        const newAmountStr = prompt('Edit amount', t.amount);
+        if (newAmountStr === null) return;
+        const newAmount = parseFloat(newAmountStr);
+        if (isNaN(newAmount) || newAmount <= 0) { alert('Please enter a valid amount'); return; }
+
+        const newType = prompt('Edit type (Income or Expense)', t.type);
+        if (newType === null) return;
+        const typeTrim = newType.trim();
+        if (typeTrim !== 'Income' && typeTrim !== 'Expense') { alert('Type must be Income or Expense'); return; }
+
+        const newDate = prompt('Edit date (YYYY-MM-DD)', t.date);
+        if (newDate === null) return;
+
+        
+        t.desc = newDesc.trim();
+        t.amount = newAmount;
+        t.type = typeTrim;
+        t.date = newDate.trim();
+        saveAndRender();
+        return;
+      }
+    });
+  }
+
+  renderTransactions();
     
