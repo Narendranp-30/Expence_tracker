@@ -78,7 +78,7 @@
     }
 
    function renderTransactions() {
-  transactionList.innerHTML = '';
+  transactionList.innerHTML = ' ';
   const transactionTable = document.querySelector('#transactionTable tbody');
   transactionTable.innerHTML = '';
 
